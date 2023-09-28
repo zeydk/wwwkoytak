@@ -1,7 +1,7 @@
 {
   "title": "Homev",
   "titleTemplate": "| Bluise",
-  "welcomeText": "# Yo, I'm Bluise - A Nuxt.js & Netlify CMS boilerplate.\n\nAuthentic cred hoodie hashtag selfies. Raclette banjo cardigan cred. Kitsch XOXO lomo polaroid. Knausgaard put a bird on it four dollar toast leggings typewriter asymmetrical.\n\n\n\n\n\nHIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "welcomeText": "# Bio\n\nHuseyin Zeyd Koytak is currently advancing his research at Syracuse University, where he is working towards his Ph.D. in Sociology. Hs dissertation project is focused on the transformation of taste and consumption in post-war America.\n\nZeyd began his academic journey at Bogazici University, earning a B.A. in Sociology with a minor in Economics and taking the opportunity to study abroad at Trinity College Dublin. He later pursued his M.A. in Sociology at Istanbul Sehir University.\n\nHis primary areas of interest span across race and ethnicity, urban sociology, the sociology of food, and computational methods, among others. His contributions to academia include a study on attitudes towards Syrian immigration within the Turkish Twittersphere and a co-authored work that received acknowledgment from the American Sociological Association in 2021.\n\nIn addition to his written work, Zeyd has an extensive background in research. He has taken up significant roles such as co-founder and research team leader at Twittersphere.net and the theme coordinator for the Turkish General Social Survey.",
   "logo": "/images/uploads/logo.svg",
   "icon": "/images/uploads/logo.png",
   "loadingColor": "#0b3765",
