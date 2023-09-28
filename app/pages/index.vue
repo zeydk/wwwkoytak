@@ -4,13 +4,14 @@
       <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
         <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
 
-   
+   <title> Huseyin Zeyd Koytak </title>
       </div>
       <div class="flex flex-col w-full xl:w-2/5">
         <img
-          alt="Hero"
+          alt="Zeyd Koytak"
           class="rounded shadow-xl"
           src="https://www.maxwell.syr.edu/images/default-source/people-listings/zeyd-koytak.jpg?sfvrsn=3fe010a7_6"
+          width="300" height="300"
         />
       </div>
     </div>
