@@ -6,7 +6,7 @@
         <div v-html="$md.render(welcomeText)" class="home__welcome markdown"/>
 
       </div>
-      <div class="flex flex-col w-full xl:w-2/5 pl-10 -mt-10">
+      <div class="flex flex-col w-full xl:w-2/5 pl-10 -mt-20">
         <img
           alt="Huseyin Zeyd Koytak"
           class="rounded shadow-xl"
