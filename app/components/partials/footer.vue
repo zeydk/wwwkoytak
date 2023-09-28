@@ -1,7 +1,6 @@
 <template>
   <footer class="footer -mx-4 md:mx-0">
     <div class="container mx-auto pb-6 flex justify-center">
-      <a href="https://www.koytak.com">Koytak, Sociologist</a>
     </div>
   </footer>
 </template>
