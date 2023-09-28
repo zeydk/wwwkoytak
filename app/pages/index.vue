@@ -11,7 +11,7 @@
           alt="Huseyin Zeyd Koytak"
           class="rounded shadow-xl"
           src="https://www.maxwell.syr.edu/images/default-source/people-listings/zeyd-koytak.jpg?sfvrsn=3fe010a7_6"
-          width="400" height="400"
+          width="350" height="350"
         />
       </div>
     </div>
