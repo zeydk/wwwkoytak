@@ -9,7 +9,7 @@
       <div class="flex flex-col w-full xl:w-2/5">
         <img
           alt="Huseyin Zeyd Koytak"
-          class="rounded shadow-xl"
+          class="rounded shadow-xl pl-10"
           src="https://www.maxwell.syr.edu/images/default-source/people-listings/zeyd-koytak.jpg?sfvrsn=3fe010a7_6"
           width="350" height="350"
         />
