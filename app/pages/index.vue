@@ -1,18 +1,17 @@
-<title> Me, Huseyin Zeyd Koytak </title>
 
 <template>
   <section class="home">
     <div class="py-24 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
-        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
+        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" align="justify"/>
 
       </div>
       <div class="flex flex-col w-full xl:w-2/5">
         <img
-          alt="Zeyd Koytak"
+          alt="Huseyin Zeyd Koytak"
           class="rounded shadow-xl"
           src="https://www.maxwell.syr.edu/images/default-source/people-listings/zeyd-koytak.jpg?sfvrsn=3fe010a7_6"
-          width="300" height="300"
+          width="400" height="400"
         />
       </div>
     </div>
