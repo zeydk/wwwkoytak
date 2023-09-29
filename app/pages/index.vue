@@ -10,7 +10,7 @@
         <img
           alt="Huseyin Zeyd Koytak"
           class="rounded shadow-xl"
-          src="https://www.maxwell.syr.edu/images/default-source/people-listings/zeyd-koytak.jpg?sfvrsn=3fe010a7_6"
+          src="http://www.koytak.com/app/static/images/uploads/zeyd.jpg"
           width="350" height="350"
         />
       </div>
