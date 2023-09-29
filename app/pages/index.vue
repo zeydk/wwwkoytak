@@ -10,7 +10,7 @@
         <img
           alt="Huseyin Zeyd Koytak"
           class="rounded shadow-xl"
-          src="http://www.koytak.com/app/static/images/uploads/zeyd.jpg"
+          src="http://www.koytak.com/images/uploads/zeyd.jpg"
           width="350" height="350"
         />
       </div>
