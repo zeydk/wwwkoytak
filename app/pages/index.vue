@@ -8,13 +8,14 @@
       <div class="w-full md:w-2/5 flex justify-center md:justify-start mt-10 md:mt-0">
         <img
           alt="Huseyin Zeyd Koytak"
-          class="rounded shadow-xl max-w-full h-auto"
+          class="rounded shadow-xl max-w-full h-auto w-48 md:w-64 lg:w-72"
           src="http://www.koytak.com/images/uploads/zeyd.jpg"
         />
       </div>
     </div>
   </section>
 </template>
+
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
