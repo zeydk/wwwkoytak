@@ -1,17 +1,15 @@
 
 <template>
   <section class="home">
-    <div class="py-24 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-      <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
-        <div v-html="$md.render(welcomeText)" class="home__welcome markdown"/>
-
+    <div class="container mx-auto py-12 md:py-24 flex flex-wrap items-center">
+      <div class="w-full md:w-3/5 flex flex-col justify-center items-start px-4 md:px-8">
+        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
       </div>
-      <div class="flex flex-col w-full xl:w-2/5 pl-10 -mt-20">
+      <div class="w-full md:w-2/5 flex justify-center md:justify-start mt-10 md:mt-0">
         <img
           alt="Huseyin Zeyd Koytak"
-          class="rounded shadow-xl"
+          class="rounded shadow-xl max-w-full h-auto"
           src="http://www.koytak.com/images/uploads/zeyd.jpg"
-          width="350" height="350"
         />
       </div>
     </div>
