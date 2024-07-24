@@ -8,7 +8,7 @@
       <div class="w-full md:w-2/5 flex justify-center md:justify-start mt-10 md:mt-0">
         <img
           alt="Huseyin Zeyd Koytak"
-          class="rounded shadow-xl max-w-full h-auto w-64 md:w-80 lg:w-96"
+          class="rounded shadow-xl max-w-full h-auto w-72 md:w-88 lg:w-100"
           src="http://www.koytak.com/images/uploads/hzk.jpg"
         />
       </div>
