@@ -5,8 +5,7 @@
       <nuxt class="nuxt" />
     </div>
 
-    <svg class="divider -mx-4 sm:mx-0" width="100%"">
-    </svg>
+    <div class="divider -mx-4 sm:mx-0"></div>
 
     <site-footer />
   </main>
@@ -31,6 +30,14 @@ export default class DefaultLayout extends Vue {}
   position: relative;
   min-width: 100vw;
   margin-top: auto;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(11, 55, 101, 0.18) 20%,
+    rgba(11, 55, 101, 0.18) 80%,
+    transparent
+  );
 }
 
 .nuxt {

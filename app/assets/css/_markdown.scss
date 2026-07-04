@@ -29,7 +29,16 @@
 }
 
 .markdown a {
-  @apply text-blue-600 font-semibold;
+  @apply font-semibold;
+  color: $bluise;
+  text-decoration: none;
+  border-bottom: 1px solid $bluise-line;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.markdown a:hover {
+  color: $bluise-hover;
+  border-bottom-color: $bluise;
 }
 
 .markdown strong a {
@@ -38,10 +47,13 @@
 
 .markdown h1 {
   @apply leading-tight text-5xl font-semibold mb-4 mt-6 pb-2;
+  letter-spacing: -0.02em;
 }
 
 .markdown h2 {
-  @apply leading-tight text-4xl font-semibold mb-4 mt-6 pb-2;
+  @apply leading-tight text-4xl font-semibold mb-4 mt-8 pb-2;
+  letter-spacing: -0.015em;
+  border-bottom: 1px solid $bluise-tint;
 }
 
 .markdown h3 {
@@ -61,7 +73,8 @@
 }
 
 .markdown blockquote {
-  @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
+  @apply text-base pl-4 pr-4 text-gray-600 italic;
+  border-left: 4px solid $bluise;
 }
 
 .markdown code {

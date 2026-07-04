@@ -39,3 +39,17 @@ export default class Home extends Vue {
 
 }
 </script>
+
+<style lang="scss" scoped>
+.home {
+  img {
+    box-shadow: 0 18px 40px -14px rgba(11, 55, 101, 0.4);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 52px -14px rgba(11, 55, 101, 0.5);
+  }
+}
+</style>
