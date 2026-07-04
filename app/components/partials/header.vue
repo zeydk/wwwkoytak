@@ -43,10 +43,24 @@ export default class Header extends Vue {
 <style lang="scss">
 .nav {
   ul li > a {
+    transition: color 0.18s ease;
+
+    &:hover {
+      color: $bluise;
+    }
+
     &.nuxt-link-active {
       color: $bluise;
       @apply font-bold;
     }
+  }
+}
+
+.header__logo img {
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.75;
   }
 }
 </style>
