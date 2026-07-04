@@ -73,7 +73,10 @@ const nuxtConfig: Configuration = {
 
     routes: [
       ...fg.sync(['./app/content/blog/**.json', './app/content/pages/**.json']).map(url => ({
-        route: url.replace(/^.\/app\/content(\/pages)?|.json$/gi, ''),
+        // Blog content lives in /content/blog but is published under /projects/*
+        route: url
+          .replace(/^.\/app\/content(\/pages)?|.json$/gi, '')
+          .replace(/^\/blog\//, '/projects/'),
         payload: require(url),
       })),
     ],
