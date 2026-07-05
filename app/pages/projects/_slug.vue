@@ -4,6 +4,7 @@
       <h1 class="text-lg md:text-xl lg:text-4xl xl:text-6xl">
         {{ post.title }}
       </h1>
+      <p v-if="post.publishedAt" class="post__date">{{ post.publishedAt }}</p>
     </div>
 
     <div v-html="$md.render(post.content)" class="post__content markdown pt-4 md:pt-6 md:pb-24" />
@@ -53,3 +54,10 @@ export default class BlogPost extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.post__date {
+  @apply text-sm mt-3;
+  color: #718096;
+}
+</style>

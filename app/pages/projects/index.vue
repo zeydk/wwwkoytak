@@ -12,10 +12,12 @@
         <nuxt-link :to="`/projects/${post.slug}`" class="project-link">
           <img
             :alt="post.title"
+            loading="lazy"
             class="project-thumb flex-shrink-0 object-cover rounded w-24 h-16 sm:w-32 sm:h-20"
             :src="post.featuredImage || 'https://source.unsplash.com/random/320x200'"
           />
           <div class="project-body min-w-0">
+            <p v-if="post.publishedAt" class="project-date">{{ post.publishedAt }}</p>
             <h3 class="project-title">{{ post.title }}</h3>
             <p class="project-excerpt">{{ post.excerpt }}</p>
             <span class="project-more">Read more &rarr;</span>
@@ -115,6 +117,12 @@ export default class BlogIndex extends Vue {
 
 .project-body {
   @apply ml-4 sm:ml-5;
+}
+
+.project-date {
+  @apply text-xs font-medium uppercase mb-1;
+  color: #a0aec0;
+  letter-spacing: 0.05em;
 }
 
 .project-title {

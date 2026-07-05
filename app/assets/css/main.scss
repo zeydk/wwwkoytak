@@ -27,6 +27,14 @@ a {
   outline-offset: 2px;
 }
 
+// Comfortable reading measure for long-form pages (CV, Research, Teaching,
+// individual projects) — centered, without touching the home two-column layout.
+.page__content,
+.post__content {
+  @apply mx-auto;
+  max-width: 46rem;
+}
+
 .main {
   display: flex;
   flex-direction: column;
