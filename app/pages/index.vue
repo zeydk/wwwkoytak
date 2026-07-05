@@ -1,8 +1,6 @@
 <template>
   <section class="home">
-    <div class="home__banner"></div>
-
-    <div class="home__body md:flex md:items-start">
+    <div class="home__body md:flex md:items-start pt-8 md:pt-12">
       <aside class="profile w-full md:w-1/3 lg:w-1/4 px-4 md:pl-0 md:pr-8 text-center md:text-left">
         <img
           class="profile__photo"
@@ -11,12 +9,19 @@
         />
 
         <h1 class="profile__name">Huseyin Zeyd Koytak</h1>
-        <p class="profile__role">Sociologist</p>
-        <p class="profile__role">Visiting Assistant Professor</p>
+        <p class="profile__role">Sociologist, PhD</p>
+        <p class="profile__role">Assistant Professor</p>
 
         <a class="profile__email" href="mailto:zeyd@koytak.com">zeyd@koytak.com</a>
 
-        <p class="profile__affil">University of Mississippi</p>
+        <div class="profile__edu">
+          <p class="profile__edu-heading">Education</p>
+          <ul>
+            <li><span class="profile__edu-degree">PhD</span>, Syracuse University</li>
+            <li><span class="profile__edu-degree">MA</span>, İstanbul Şehir University</li>
+            <li><span class="profile__edu-degree">BA</span>, Boğaziçi University</li>
+          </ul>
+        </div>
 
         <nav class="profile__social" aria-label="Academic profiles">
           <a
@@ -95,22 +100,19 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.home__banner {
-  height: 140px;
-  margin-top: 0.5rem;
-  border-radius: 0.5rem;
-  background: linear-gradient(120deg, #e9f0f7 0%, #d9e6f2 55%, #cfe0ee 100%);
-}
-
 .profile__photo {
   display: block;
   width: 11rem;
   height: auto;
-  margin: -64px auto 0;
+  margin: 0 auto;
   border: 6px solid #fff;
   box-shadow: 0 14px 34px -10px rgba(11, 55, 101, 0.3);
-  position: relative;
-  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -12px rgba(11, 55, 101, 0.4);
+  }
 }
 
 .profile__name {
@@ -133,9 +135,31 @@ export default class Home extends Vue {
   }
 }
 
-.profile__affil {
-  @apply text-sm mt-3 leading-snug;
+.profile__edu {
+  @apply mt-4;
+}
+
+.profile__edu-heading {
+  @apply text-xs font-semibold uppercase mb-1;
+  color: #718096;
+  letter-spacing: 0.06em;
+}
+
+.profile__edu ul {
+  @apply text-sm;
+  list-style: none;
+  padding-left: 0;
   color: #4a5568;
+}
+
+.profile__edu li {
+  @apply leading-snug;
+  margin-bottom: 0.15rem;
+}
+
+.profile__edu-degree {
+  @apply font-semibold;
+  color: $ink;
 }
 
 .profile__social {
@@ -158,11 +182,6 @@ export default class Home extends Vue {
 }
 
 @media (min-width: 768px) {
-  .home__banner {
-    height: 200px;
-    margin-top: 0.75rem;
-  }
-
   .profile__photo {
     margin-left: 0;
     margin-right: 0;
