@@ -23,9 +23,3 @@ export default class Home extends Vue {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.home__welcome {
-  max-width: 46rem;
-}
-</style>
