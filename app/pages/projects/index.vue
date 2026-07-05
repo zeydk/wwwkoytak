@@ -116,7 +116,13 @@ export default class BlogIndex extends Vue {
 }
 
 .project-body {
-  @apply ml-4 sm:ml-5;
+  margin-left: 1rem;
+}
+
+@media (min-width: 640px) {
+  .project-body {
+    margin-left: 1.25rem;
+  }
 }
 
 .project-date {
@@ -126,10 +132,17 @@ export default class BlogIndex extends Vue {
 }
 
 .project-title {
-  @apply text-base sm:text-lg font-semibold leading-snug;
+  @apply font-semibold leading-snug;
+  font-size: 1rem;
   color: $ink;
   letter-spacing: -0.01em;
   transition: color 0.18s ease;
+}
+
+@media (min-width: 640px) {
+  .project-title {
+    font-size: 1.125rem;
+  }
 }
 
 .project-excerpt {
