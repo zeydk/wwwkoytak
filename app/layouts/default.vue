@@ -2,7 +2,14 @@
   <main :class="[$route.name]" class="main px-4 md:px-0">
     <div class="container mx-auto">
       <site-header />
-      <nuxt class="nuxt" />
+
+      <div class="layout md:flex md:items-start">
+        <profile-sidebar class="layout__sidebar" />
+
+        <div class="layout__content w-full md:w-2/3 lg:w-3/4 mt-8 md:mt-0">
+          <nuxt class="nuxt" />
+        </div>
+      </div>
     </div>
 
     <div class="divider -mx-4 sm:mx-0"></div>
@@ -15,11 +22,13 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 import SiteHeader from '@/components/partials/header.vue';
 import SiteFooter from '@/components/partials/footer.vue';
+import ProfileSidebar from '@/components/partials/profile-sidebar.vue';
 
 @Component({
   components: {
     SiteHeader,
     SiteFooter,
+    ProfileSidebar,
   },
 })
 export default class DefaultLayout extends Vue {}
@@ -42,5 +51,17 @@ export default class DefaultLayout extends Vue {}
 
 .nuxt {
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.layout {
+  padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .layout__sidebar {
+    position: sticky;
+    top: 1.5rem;
+    align-self: flex-start;
+  }
 }
 </style>
