@@ -1,5 +1,5 @@
 <template>
-  <aside class="profile w-full md:w-1/3 lg:w-1/4 px-4 md:pl-0 md:pr-8 text-center md:text-left">
+  <aside class="profile w-full px-4 md:pl-0 md:pr-6 text-center md:text-left">
     <img
       class="profile__photo"
       src="/images/uploads/hzk.jpg"

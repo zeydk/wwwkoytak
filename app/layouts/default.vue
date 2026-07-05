@@ -6,7 +6,7 @@
       <div class="layout md:flex md:items-start">
         <profile-sidebar class="layout__sidebar" />
 
-        <div class="layout__content w-full md:w-2/3 lg:w-3/4 mt-8 md:mt-0">
+        <div class="layout__content w-full mt-8 md:mt-0">
           <nuxt class="nuxt" />
         </div>
       </div>
@@ -57,11 +57,29 @@ export default class DefaultLayout extends Vue {}
   padding-top: 1rem;
 }
 
+// On narrow screens (phones / very narrow windows) the sidebar only
+// shows on the homepage; other pages get the full width for their content.
+.layout__sidebar {
+  display: none;
+}
+
+.index .layout__sidebar {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .layout__sidebar {
+    display: block;
     position: sticky;
     top: 1.5rem;
     align-self: flex-start;
+    width: 15rem;
+    flex-shrink: 0;
+  }
+
+  .layout__content {
+    flex: 1 1 0%;
+    min-width: 0;
   }
 }
 </style>
