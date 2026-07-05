@@ -1,1 +1,6 @@
+# Section renamed from /blog to /projects — keep old links working
+/blog             /projects            301
+/blog/page/*      /projects/page/:splat 301
+/blog/*           /projects/:splat     301
+
 /*    /200.html   200
