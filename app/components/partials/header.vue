@@ -1,9 +1,7 @@
 <template>
   <header class="flex items-center py-4 md:py-8">
     <div class="header__logo">
-      <nuxt-link to="/">
-        <img :src="logo" alt="Logo" />
-      </nuxt-link>
+      <nuxt-link to="/" class="header__wordmark">Koytak, PhD</nuxt-link>
     </div>
 
     <nav class="nav ml-auto">
@@ -28,15 +26,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import settings from '@/content/settings/general.json';
 
 @Component
 export default class Header extends Vue {
   get pages(): Page[] {
     return this.$store.state.pages;
   }
-
-  logo = settings.logo;
 }
 </script>
 
@@ -56,11 +51,17 @@ export default class Header extends Vue {
   }
 }
 
-.header__logo img {
+.header__wordmark {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  color: $bluise;
+  line-height: 1;
   transition: opacity 0.2s ease;
 
   &:hover {
-    opacity: 0.75;
+    opacity: 0.78;
   }
 }
 </style>
