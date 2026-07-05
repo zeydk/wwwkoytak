@@ -1,26 +1,37 @@
 <template>
   <section class="home">
-    <div class="container mx-auto py-12 md:py-24 flex flex-wrap md:items-start">
-      <div class="w-full md:w-3/5 flex flex-col justify-center items-start px-4 md:px-8">
-        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
-      </div>
-
-      <div class="w-full md:w-2/5 flex flex-col items-center mt-10 md:mt-0 px-4 md:px-8">
+    <div class="home__body md:flex md:items-start pt-8 md:pt-12">
+      <aside class="profile w-full md:w-1/3 lg:w-1/4 px-4 md:pl-0 md:pr-8 text-center md:text-left">
         <img
-          alt="Huseyin Zeyd Koytak"
-          class="profile-photo rounded shadow-xl max-w-full h-auto w-56 sm:w-64 md:w-72 lg:w-80"
+          class="profile__photo"
           src="/images/uploads/hzk.jpg"
+          alt="Huseyin Zeyd Koytak"
         />
 
-        <nav class="profile-links mt-5" aria-label="Academic profiles">
+        <h1 class="profile__name">Huseyin Zeyd Koytak</h1>
+        <p class="profile__role">Sociologist, PhD</p>
+        <p class="profile__role">Assistant Professor</p>
+
+        <a class="profile__email" href="mailto:zeyd@koytak.com">zeyd@koytak.com</a>
+
+        <div class="profile__edu">
+          <p class="profile__edu-heading">Education</p>
+          <ul>
+            <li><span class="profile__edu-degree">PhD</span>, Syracuse University</li>
+            <li><span class="profile__edu-degree">MA</span>, İstanbul Şehir University</li>
+            <li><span class="profile__edu-degree">BA</span>, Boğaziçi University</li>
+          </ul>
+        </div>
+
+        <nav class="profile__social" aria-label="Academic profiles">
           <a
-            class="profile-link"
+            class="social-link"
             href="https://scholar.google.com/citations?user=nestUyQAAAAJ&hl=en"
             target="_blank"
             rel="noopener noreferrer"
           >
             <svg
-              class="profile-link__icon"
+              class="social-link__icon"
               viewBox="0 0 24 24"
               width="16"
               height="16"
@@ -34,16 +45,14 @@
             <span>Google Scholar</span>
           </a>
 
-          <span class="profile-links__sep" aria-hidden="true">·</span>
-
           <a
-            class="profile-link"
+            class="social-link"
             href="https://orcid.org/0000-0003-1767-0695"
             target="_blank"
             rel="noopener noreferrer"
           >
             <svg
-              class="profile-link__icon"
+              class="social-link__icon"
               viewBox="0 0 256 256"
               width="16"
               height="16"
@@ -61,6 +70,10 @@
             <span>ORCID</span>
           </a>
         </nav>
+      </aside>
+
+      <div class="about w-full md:w-2/3 lg:w-3/4 px-4 md:px-0 mt-10 md:mt-0">
+        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
       </div>
     </div>
   </section>
@@ -83,29 +96,78 @@ export default class Home extends Vue {
   get posts(): Post[] {
     return this.$store.state.posts;
   }
-
-  isSignedUp = false;
 }
 </script>
 
 <style lang="scss" scoped>
-.profile-photo {
-  box-shadow: 0 18px 40px -14px rgba(11, 55, 101, 0.4);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+.profile__photo {
+  display: block;
+  width: 11rem;
+  height: auto;
+  margin: 0 auto;
+  border: 6px solid #fff;
+  box-shadow: 0 14px 34px -10px rgba(11, 55, 101, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 26px 52px -14px rgba(11, 55, 101, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -12px rgba(11, 55, 101, 0.4);
   }
 }
 
-.profile-links {
-  @apply flex items-center justify-center;
-  font-size: 0.9rem;
+.profile__name {
+  @apply text-xl font-bold mt-4 leading-tight;
+  color: $ink;
+  letter-spacing: -0.01em;
 }
 
-.profile-link {
-  @apply inline-flex items-center font-medium;
+.profile__role {
+  @apply text-sm leading-snug;
+  color: #4a5568;
+}
+
+.profile__email {
+  @apply block text-sm mt-3 font-medium;
+  color: $bluise;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.profile__edu {
+  @apply mt-4;
+}
+
+.profile__edu-heading {
+  @apply text-xs font-semibold uppercase mb-1;
+  color: #718096;
+  letter-spacing: 0.06em;
+}
+
+.profile__edu ul {
+  @apply text-sm;
+  list-style: none;
+  padding-left: 0;
+  color: #4a5568;
+}
+
+.profile__edu li {
+  @apply leading-snug;
+  margin-bottom: 0.15rem;
+}
+
+.profile__edu-degree {
+  @apply font-semibold;
+  color: $ink;
+}
+
+.profile__social {
+  @apply mt-4 flex flex-col items-center;
+}
+
+.social-link {
+  @apply inline-flex items-center text-sm font-medium py-1;
   color: $ink;
   transition: color 0.18s ease;
 
@@ -114,13 +176,24 @@ export default class Home extends Vue {
   }
 }
 
-.profile-link__icon {
+.social-link__icon {
   @apply mr-2 flex-shrink-0;
   color: $bluise;
 }
 
-.profile-links__sep {
-  @apply mx-3;
-  color: #cbd5e0;
+@media (min-width: 768px) {
+  .profile__photo {
+    margin-left: 0;
+    margin-right: 0;
+    width: 12rem;
+  }
+
+  .profile__social {
+    align-items: flex-start;
+  }
+
+  .about {
+    padding-top: 0.5rem;
+  }
 }
 </style>
