@@ -32,11 +32,30 @@ interface Actions<S, R> extends ActionTree<S, R> {
   nuxtServerInit(context: ActionContext<S, R>): void;
 }
 
+const MONTHS: Record<string, number> = {
+  jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
+  jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11,
+};
+
+// Sortable timestamp from a "MMM YYYY" (or "Do MMM YYYY") publishedAt string.
+function publishedTime(value?: string): number {
+  if (!value) return 0;
+  const m = value.match(/([A-Za-z]{3})[a-z]*\s+(\d{4})/);
+  if (m) return new Date(parseInt(m[2], 10), MONTHS[m[1].toLowerCase()] || 0, 1).getTime();
+  const y = value.match(/(\d{4})/);
+  return y ? new Date(parseInt(y[1], 10), 0, 1).getTime() : 0;
+}
+
 export const actions: Actions<State, State> = {
   async GET_POSTS_LIST({ commit }): Promise<void | Error> {
     // Use webpack to search the blog directory matching .json files
     const context = await require.context('@/content/blog/', false, /\.json$/);
     const posts = await getContent({ context, prefix: 'blog' });
+    posts.sort(
+      (a, b) =>
+        publishedTime((b as { publishedAt?: string }).publishedAt) -
+        publishedTime((a as { publishedAt?: string }).publishedAt),
+    );
     commit('SET_POSTS', posts);
   },
 
