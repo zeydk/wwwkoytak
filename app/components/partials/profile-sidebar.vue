@@ -102,7 +102,7 @@ export default class ProfileSidebar extends Vue {
     const tr = this.$store.state.locale === 'tr';
     return {
       role1: tr ? 'Sosyolog, PhD' : 'Sociologist, PhD',
-      role2: tr ? 'Doktor Öğretim Üyesi' : 'Adjunct Assistant Professor',
+      role2: tr ? 'Yarı Zamanlı Doktor Öğretim Üyesi' : 'Adjunct Assistant Professor',
       affiliation: tr ? 'Yeditepe Üniversitesi' : 'Yeditepe University',
       eduHeading: tr ? 'Eğitim' : 'Education',
     };
