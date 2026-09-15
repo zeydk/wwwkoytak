@@ -23,6 +23,10 @@
   @apply mt-0 mb-4;
 }
 
+.markdown p {
+  margin-bottom: 1rem;
+}
+
 .markdown li + li {
   @apply mt-1;
 }
