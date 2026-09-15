@@ -2,9 +2,9 @@ export function createExcerpt({ text, length = 150 }: { text: string; length?: n
   return text.split('', length).concat(['...']).join('');
 }
 
-export async function getContent({ context, prefix }): Promise<{ slug: string; title: string }[]> {
+export async function getContent({ context, prefix }): Promise<Array<Record<string, unknown>>> {
   const slugs: string[] = [];
-  const content: { slug: string; title: string; featuredImage: string }[] = [];
+  const content: Array<Record<string, unknown>> = [];
 
   // Get slugs
   for (let index = 0; index < context.keys().length; index += 1) {
@@ -24,6 +24,8 @@ export async function getContent({ context, prefix }): Promise<{ slug: string; t
     content.push({
       slug,
       title: entry.title,
+      title_tr: entry.title_tr,
+      order: entry.order,
       ...(prefix === 'blog' && {
         excerpt: createExcerpt({ text: entry.content }),
         publishedAt: entry.publishedAt,
