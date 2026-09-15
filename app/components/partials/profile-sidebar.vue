@@ -7,13 +7,14 @@
     />
 
     <p class="profile__name">Huseyin Zeyd Koytak</p>
-    <p class="profile__role">Sociologist, PhD</p>
-    <p class="profile__role">Assistant Professor</p>
+    <p class="profile__role">{{ t.role1 }}</p>
+    <p class="profile__role">{{ t.role2 }}</p>
+    <p class="profile__affil">{{ t.affiliation }}</p>
 
     <a class="profile__email" href="mailto:zeyd@koytak.com">zeyd@koytak.com</a>
 
     <div class="profile__edu">
-      <p class="profile__edu-heading">Education</p>
+      <p class="profile__edu-heading">{{ t.eduHeading }}</p>
       <ul>
         <li><span class="profile__edu-degree">PhD</span>, Syracuse University</li>
         <li><span class="profile__edu-degree">MA</span>, İstanbul Şehir University</li>
@@ -96,7 +97,17 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 
 @Component
-export default class ProfileSidebar extends Vue {}
+export default class ProfileSidebar extends Vue {
+  get t(): Record<string, string> {
+    const tr = this.$store.state.locale === 'tr';
+    return {
+      role1: tr ? 'Sosyolog, PhD' : 'Sociologist, PhD',
+      role2: tr ? 'Doktor Öğretim Üyesi' : 'Adjunct Assistant Professor',
+      affiliation: tr ? 'Yeditepe Üniversitesi' : 'Yeditepe University',
+      eduHeading: tr ? 'Eğitim' : 'Education',
+    };
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -124,6 +135,11 @@ export default class ProfileSidebar extends Vue {}
 .profile__role {
   @apply text-sm leading-snug;
   color: #4a5568;
+}
+
+.profile__affil {
+  @apply text-sm leading-snug mt-1;
+  color: #718096;
 }
 
 .profile__email {

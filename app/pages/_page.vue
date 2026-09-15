@@ -1,10 +1,10 @@
 <template>
   <section class="page" :class="page.slug">
     <h1 class="page__title text-lg md:text-xl lg:text-4xl xl:text-6xl text-center py-8 md:py-16">
-      {{ page.title }}
+      {{ loc(page, 'title') }}
     </h1>
 
-    <div v-html="$md.render(page.content)" class="page__content markdown pt-4 md:pt-6 md:pb-24" />
+    <div v-html="$md.render(loc(page, 'content'))" class="page__content markdown pt-4 md:pt-6 md:pb-24" />
   </section>
 </template>
 
@@ -24,12 +24,12 @@ import { MetaInfo } from 'vue-meta';
 
   head(): MetaInfo {
     return {
-      title: this.page.title,
+      title: this.loc(this.page, 'title'),
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.page.seoDescription,
+          content: this.loc(this.page, 'seoDescription'),
         },
         {
           hid: 'og:image',

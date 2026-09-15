@@ -7,6 +7,7 @@ export interface State {
   perPage: number;
   pages: Page[];
   posts: Post[];
+  locale: string;
   route?: Route;
 }
 
@@ -15,6 +16,7 @@ export const appState = {
   perPage: 4,
   pages: [],
   posts: [],
+  locale: 'en',
 };
 
 export const mutations: MutationTree<State> = {
@@ -23,6 +25,9 @@ export const mutations: MutationTree<State> = {
   },
   SET_POSTS: (state, payload: Record<string, unknown>): void => {
     Vue.set(state, 'posts', payload);
+  },
+  SET_LOCALE: (state, payload: string): void => {
+    Vue.set(state, 'locale', payload);
   },
 };
 
@@ -66,6 +71,7 @@ export const actions: Actions<State, State> = {
       context,
       prefix: 'pages',
     });
+    pages.sort((a, b) => ((a.order as number) || 99) - ((b.order as number) || 99));
     commit('SET_PAGES', pages);
   },
 

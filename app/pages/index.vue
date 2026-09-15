@@ -1,6 +1,6 @@
 <template>
   <section class="home">
-    <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
+    <div v-html="$md.render(loc(settings, 'welcomeText'))" class="home__welcome markdown" />
   </section>
 </template>
 
@@ -16,7 +16,7 @@ import settings from '@/content/settings/general.json';
   },
 })
 export default class Home extends Vue {
-  welcomeText = settings.welcomeText;
+  settings = settings;
 
   get posts(): Post[] {
     return this.$store.state.posts;

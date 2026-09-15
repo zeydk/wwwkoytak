@@ -86,7 +86,7 @@ const nuxtConfig: Configuration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/loc.js', '@/plugins/i18n.client.js'],
 
   /*
    ** Nuxt.js modules
