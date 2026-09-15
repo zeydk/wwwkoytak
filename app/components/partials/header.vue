@@ -1,21 +1,23 @@
 <template>
-  <header class="flex flex-wrap items-center py-4 md:py-8">
-    <div class="header__logo">
+  <header class="header py-4 md:py-8 md:flex md:items-center">
+    <div class="header__logo text-center md:text-left">
       <nuxt-link to="/" class="header__wordmark">Koytak, PhD</nuxt-link>
     </div>
 
-    <nav class="nav ml-auto flex items-center">
-      <ul class="flex flex-row flex-wrap items-center md:mr-3 lg:mr-6">
+    <nav class="nav md:ml-auto md:flex md:items-center">
+      <ul
+        class="flex flex-row flex-wrap justify-center md:justify-end items-center text-sm md:text-base mt-3 md:mt-0 md:mr-3 lg:mr-6"
+      >
         <li
           v-for="(page, index) in pages"
           :key="index"
-          class="block font-medium px-3 py-1 md:px-3 lg:px-4"
+          class="font-medium px-2 py-1 md:px-3 lg:px-4"
         >
           <nuxt-link :to="`/${page.slug}`">{{ loc(page, 'title') }}</nuxt-link>
         </li>
       </ul>
 
-      <div class="lang" role="group" aria-label="Language">
+      <div class="lang flex justify-center mt-2 md:mt-0" role="group" aria-label="Language">
         <button
           type="button"
           class="lang__btn"
@@ -91,7 +93,7 @@ export default class Header extends Vue {
 }
 
 .lang {
-  @apply flex items-center;
+  align-items: center;
   font-size: 0.8rem;
 }
 

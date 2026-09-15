@@ -9,7 +9,14 @@
 }
 
 .markdown {
-  @apply text-gray-900 leading-normal break-words text-justify;
+  @apply text-gray-900 leading-normal break-words;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .markdown {
+    text-align: justify;
+  }
 }
 
 .markdown > * + * {
@@ -46,18 +53,35 @@
 }
 
 .markdown h1 {
-  @apply leading-tight text-5xl font-semibold mb-4 mt-6 pb-2;
-  letter-spacing: -0.02em;
+  @apply leading-tight font-semibold mb-3 mt-6 pb-1;
+  font-size: 1.5rem;
+  letter-spacing: -0.015em;
 }
 
 .markdown h2 {
-  @apply leading-tight text-4xl font-semibold mb-4 mt-8 pb-2;
-  letter-spacing: -0.015em;
+  @apply leading-tight font-semibold mb-3 mt-8 pb-2;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
   border-bottom: 1px solid $bluise-tint;
 }
 
 .markdown h3 {
-  @apply leading-snug text-2xl font-semibold mb-4 mt-6;
+  @apply leading-snug font-semibold mb-2 mt-6;
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .markdown h1 {
+    font-size: 1.875rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.25rem;
+  }
 }
 
 .markdown h4 {
