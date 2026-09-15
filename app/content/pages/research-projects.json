@@ -1,0 +1,8 @@
+{
+  "title": "Research Projects",
+  "title_tr": "Araştırma Projeleri",
+  "order": 3,
+  "seoDescription": "Applied, data-driven research projects: Karne and the Istanbul Crime Index.",
+  "content": "Beyond academic publishing, I build data-driven public tools that bring sociological research to wider audiences.\n\n## Karne\n\nA data platform that helps students and families in Turkey compare universities and schools through transparent, data-driven indicators — research output, placement outcomes, affordability, and more. [karne.com](https://karne.com)\n\n## Suç Endeksi — Istanbul Crime Index\n\nA research project mapping the geography of crime across Istanbul's districts using large-scale news and event data, combining computational text analysis with spatial methods to make urban safety patterns legible.",
+  "content_tr": "Akademik yayınların ötesinde, sosyolojik araştırmayı geniş kitlelere ulaştıran veri-odaklı kamusal araçlar geliştiriyorum.\n\n## Karne\n\nTürkiye'deki öğrenci ve ailelerin üniversiteleri ve okulları şeffaf, veri-odaklı göstergelerle — araştırma çıktısı, yerleşme sonuçları, erişilebilirlik ve daha fazlası — karşılaştırmasına yardımcı olan bir veri platformu. [karne.com](https://karne.com)\n\n## Suç Endeksi\n\nİstanbul'un ilçelerindeki suç coğrafyasını büyük ölçekli haber ve olay verileriyle haritalayan; kentsel güvenlik örüntülerini görünür kılmak için hesaplamalı metin analizini mekânsal yöntemlerle birleştiren bir araştırma projesi."
+}
